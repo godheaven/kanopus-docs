@@ -1,55 +1,67 @@
-## 3. Propuestas de Arquitectura
+[BACK](README.md)
 
-- ✔ Arquitectura en Capas (Layered Architecture)
-- ✔ Hexagonal Architecture (Ports and Adapters)
-- ✔ Clean Architecture (Domain-Centric)
-- ✔ Microservicios con Bounded Context
-- ✔ Frontend Modular (Angular con Feature Modules y Lazy Loading)
+## Table of Contents
+
+- [1. Improving Non-Modularized Projects](section1_projects.md)
+- [2. Repository Naming](section2_repositories.md)
+- [3. Architecture Proposals](section3_arquitecture.md)
+- [4. Software Design Patterns Guide](section4_patterns.md)
+- [5. Recommended Architecture for Large Projects (+20 Microservices)](section5_architecture_recommended.md)
+- [6. Local Development Setup](section6_local_environment.md)
+- [7. CI/CD Recommendation](section7_cicd.md)
 
 
 <br/>
+<br/>
 
-### 3.1. 📚 Principios SOLID en Desarrollo de Software
+## 3. Architecture Proposals
 
-**SOLID** es un conjunto de 5 principios de diseño orientado a objetos que ayudan a construir software más mantenible, extensible y robusto.
+- ✔ Layered Architecture
+- ✔ Hexagonal Architecture (Ports and Adapters)
+- ✔ Clean Architecture (Domain-Centric)
+- ✔ Microservices with Bounded Context
+- ✔ Modular Frontend (Angular with Feature Modules and Lazy Loading)
 
-**Resumen de los principios SOLID**
+<br/>
 
-| Letra | Principio                              | Descripción breve                               |
-|-------|----------------------------------------|--------------------------------------------------|
-| S     | Single Responsibility Principle (SRP)  | Una clase debe tener una sola responsabilidad.   |
-| O     | Open/Closed Principle (OCP)            | Abierto para extensión, cerrado para modificación. |
-| L     | Liskov Substitution Principle (LSP)    | Las subclases deben sustituir correctamente a su clase padre. |
-| I     | Interface Segregation Principle (ISP)  | No forzar a las clases a implementar métodos que no usan. |
-| D     | Dependency Inversion Principle (DIP)   | Depender de abstracciones, no de implementaciones. |
+### 3.1. 📚 SOLID Principles in Software Development
 
+**SOLID** is a set of 5 object-oriented design principles that help build more maintainable, extensible, and robust software.
 
-## 🎯 Beneficios de aplicar SOLID
+**Summary of SOLID Principles**
 
-- Código limpio, modular y fácil de mantener
-- Menor acoplamiento
-- Facilita testing y refactorización
-- Compatible con principios de arquitectura limpia
+| Letter | Principle                             | Brief Description                                |
+|--------|----------------------------------------|--------------------------------------------------|
+| S      | Single Responsibility Principle (SRP)  | A class should have only one reason to change.   |
+| O      | Open/Closed Principle (OCP)            | Open for extension, closed for modification.     |
+| L      | Liskov Substitution Principle (LSP)    | Subtypes must be substitutable for their base types. |
+| I      | Interface Segregation Principle (ISP)  | Do not force classes to depend on unused methods. |
+| D      | Dependency Inversion Principle (DIP)   | Depend on abstractions, not on concrete classes.  |
+
+## 🎯 Benefits of Applying SOLID
+
+- Clean, modular, and maintainable code
+- Lower coupling
+- Easier testing and refactoring
+- Compatible with clean architecture principles
 
 ---
 
-
 <br/>
 
-### 3.2. 🔧 Patrones generales que refuerzan SRP
+### 3.2. 🔧 General Patterns Supporting SRP
 
-| Patrón              | Descripción                        |
-|--------------------------|------------------------------------|
-| Service Layer                 | Encapsula la lógica de negocio en clases de servicio, separando responsabilidades de control y persistencia.|
-| Repository                    | Aísla la lógica de acceso a datos en una capa dedicada, evitando acoplamiento con lógica de negocio   |
-| DTO (Data Transfer Object)    | Reduce acoplamiento entre capas, evitando que las entidades se propaguen a otras capas.|
-| Factory                       | Encapsula la creación de objetos complejos, evitando lógica de inicialización mezclada en controladores o servicios.|
-| Adapter                       | Transforma interfaces externas para que encajen en nuestro dominio sin romper SRP del resto del sistema.|
-| Command                       | Encapsula una operación en una clase que tiene una única responsabilidad: ejecutar una acción con parámetros específicos.|
-| Strategy                      | Permite cambiar algoritmos o reglas sin modificar la lógica que los utiliza (ej. múltiples formas de validar acceso).|
-| Chain of Responsibility       | Encadena manejadores que tienen una única responsabilidad por tipo de evento (ej. validaciones encadenadas, filtros, etc.). |
+| Pattern               | Description                                                  |
+|-----------------------|--------------------------------------------------------------|
+| Service Layer         | Encapsulates business logic in service classes.              |
+| Repository            | Isolates data access logic in a dedicated layer.             |
+| DTO (Data Transfer Object) | Reduces coupling between layers.                         |
+| Factory               | Encapsulates complex object creation.                        |
+| Adapter               | Adapts external interfaces to fit domain needs.              |
+| Command               | Encapsulates an operation in a dedicated class.              |
+| Strategy              | Allows dynamic change of algorithms or rules.                |
+| Chain of Responsibility | Chains handlers for specialized processing.               |
 
- 
 ---
 <br/>
 <br/>

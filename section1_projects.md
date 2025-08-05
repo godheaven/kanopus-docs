@@ -1,16 +1,30 @@
+[BACK](README.md)
 
-## 1. Mejora de Proyectos No Modularizados
+## Table of Contents
 
-Las mejoras para proyectos de software no modularizados y con gran volumen de código fuente consisten en acciones de refactorización, reorganización y separación de responsabilidades. El objetivo es convertir sistemas acoplados y difíciles de mantener en soluciones escalables, mantenibles y testeables. Estas mejoras incluyen: separación en capas o módulos, eliminación de código duplicado, introducción de interfaces, uso de patrones de diseño como inyección de dependencias, y desacoplamiento progresivo de componentes.
+- [1. Improving Non-Modularized Projects](section1_projects.md)
+- [2. Repository Naming](section2_repositories.md)
+- [3. Architecture Proposals](section3_arquitecture.md)
+- [4. Software Design Patterns Guide](section4_patterns.md)
+- [5. Recommended Architecture for Large Projects (+20 Microservices)](section5_architecture_recommended.md)
+- [6. Local Development Setup](section6_local_environment.md)
+- [7. CI/CD Recommendation](section7_cicd.md)
 
-Estas mejoras suelen incluir:
 
-- ✔ Separación de responsabilidades (principio de Single Responsibility).
-- ✔ Extracción de módulos o servicios independientes.
-- ✔ Refactorización de código duplicado o enredado.
-- ✔ Introducción de patrones como capas, interfaces o inyección de dependencias.
-- ✔ Documentación de la arquitectura y sus componentes.
- 
+<br/>
+<br/>
+
+## 1. Improving Non-Modularized Projects
+
+Improvements for non-modularized software projects with large volumes of source code involve refactoring actions, reorganization, and separation of responsibilities. The goal is to transform tightly coupled and hard-to-maintain systems into scalable, maintainable, and testable solutions. These improvements include layering or modular separation, elimination of duplicated code, introduction of interfaces, use of design patterns like dependency injection, and progressive decoupling of components.
+
+These improvements typically include:
+
+- ✔ Separation of responsibilities (Single Responsibility Principle).
+- ✔ Extraction of independent modules or services.
+- ✔ Refactoring of duplicated or tangled code.
+- ✔ Introduction of patterns such as layers, interfaces, or dependency injection.
+- ✔ Documentation of architecture and its components.
 
 ---
 <br/>

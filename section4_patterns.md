@@ -1,65 +1,98 @@
-## 4. Guía de Patrones de Diseño de Software
-	
-## ✅ 4.1. Patrones de Diseño de Software Reconocidos
+[BACK](README.md)
 
-### 🔧 Patrones Creacionales
-- **Singleton**: Garantiza una única instancia global.
-- **Factory Method**: Delega la creación de objetos a subclases.
-- **Abstract Factory**: Produce familias de objetos relacionados.
-- **Builder**: Construcción paso a paso de objetos complejos.
-- **Prototype**: Clonación de objetos.
+## Table of Contents
 
-### 🧱 Patrones Estructurales
-- **Adapter**: Convierte una interfaz en otra.
-- **Bridge**: Separa abstracción de su implementación.
-- **Composite**: Trata objetos individuales y grupos uniformemente.
-- **Decorator**: Añade comportamiento sin modificar la clase original.
-- **Facade**: Proporciona una interfaz unificada a subsistemas.
-- **Flyweight**: Comparte datos para eficiencia.
-- **Proxy**: Controla acceso a otro objeto.
+- [1. Improving Non-Modularized Projects](section1_projects.md)
+- [2. Repository Naming](section2_repositories.md)
+- [3. Architecture Proposals](section3_arquitecture.md)
+- [4. Software Design Patterns Guide](section4_patterns.md)
+- [5. Recommended Architecture for Large Projects (+20 Microservices)](section5_architecture_recommended.md)
+- [6. Local Development Setup](section6_local_environment.md)
+- [7. CI/CD Recommendation](section7_cicd.md)
 
-### 🎭 Patrones de Comportamiento
-- **Observer**: Subscripción a eventos.
-- **Strategy**: Algoritmos intercambiables.
-- **Command**: Encapsula una acción como objeto.
-- **State**: Comportamiento según estado.
-- **Template Method**: Esqueleto de algoritmo con pasos personalizables.
-- **Chain of Responsibility**: Manejadores encadenados.
-- **Mediator**: Centraliza la comunicación.
-- **Memento**: Guarda/restaura estado.
-- **Visitor**: Añade operaciones a estructuras.
-- **Interpreter**: Analiza lenguajes simples.
-- **Iterator**: Recorre estructuras sin exponer su implementación.
 
----
+<br/>
+<br/>
 
-## ⚠️ 4.2. Antipatrones de Diseño de Software
+## 4. Software Design Patterns Guide
 
-- **God Object**: Clases que hacen demasiadas cosas (violan SRP).
-- **Spaghetti Code**: Flujo de control enredado y difícil de seguir.
-- **Lava Flow**: Código antiguo que no se limpia por temor a romperlo.
-- **Shotgun Surgery**: Cambios pequeños que requieren muchas modificaciones en distintos lugares.
-- **Golden Hammer**: Usar un mismo patrón o tecnología para todo.
-- **Boat Anchor**: Código que se mantiene “por si acaso” pero nunca se usa.
-- **Reinventing the Wheel**: Reescribir algo que ya existe y es probado.
-- **Magic Numbers / Strings**: Valores sin contexto usados directamente en el código.
+## ✅ 4.1. Recognized Software Design Patterns
 
----
+### 🔧 Creational Patterns
+- **Singleton**: Ensures a single global instance.
+- **Factory Method**: Delegates object creation to subclasses.
+- **Abstract Factory**: Produces families of related objects.
+- **Builder**: Step-by-step construction of complex objects.
+- **Prototype**: Clones existing objects.
 
-## 🚫 4.3. Errores Comunes en el Diseño de Software
+### 🧱 Structural Patterns
+- **Adapter**: Converts one interface into another.
+- **Bridge**: Separates abstraction from implementation.
+- **Composite**: Treats individual objects and groups uniformly.
+- **Decorator**: Adds behavior without modifying the original class.
+- **Facade**: Provides a unified interface to subsystems.
+- **Flyweight**: Shares data for efficiency.
+- **Proxy**: Controls access to another object.
 
-- ❌ Usar patrones sin comprender su propósito real.
-- ❌ Crear abstracciones innecesarias o prematuras.
-- ❌ Aumentar la complejidad para "ser más elegantes".
-- ❌ No aplicar principios SOLID (especialmente SRP).
-- ❌ Mezclar responsabilidades (ej. controladores que validan, procesan y consultan).
-- ❌ No documentar ni nombrar claramente clases y métodos.
-- ❌ Ignorar la mantenibilidad futura al tomar decisiones de diseño.
-- ❌ Implementar una arquitectura solo por tendencia, sin necesidad real.
+### 🎭 Behavioral Patterns
+- **Observer**: Event subscription mechanism.
+- **Strategy**: Interchangeable algorithms.
+- **Command**: Encapsulates an action as an object.
+- **State**: Varies behavior based on state.
+- **Template Method**: Algorithm skeleton with customizable steps.
+- **Chain of Responsibility**: Linked handlers.
+- **Mediator**: Centralizes communication.
+- **Memento**: Saves/restores state.
+- **Visitor**: Adds operations to structures.
+- **Interpreter**: Parses simple languages.
+- **Iterator**: Traverses structures without exposing internals.
 
 ---
 
-> 📌 Una buena arquitectura debe ser entendible, flexible y alineada con el negocio, no solo “correcta” desde el punto de vista técnico.
+## ⚠️ 4.2. Software Design Anti-Patterns
+
+- **God Object**: Classes that do too much (violate SRP).
+- **Spaghetti Code**: Tangled and hard-to-follow flow.
+- **Lava Flow**: Obsolete code kept due to fear of removal.
+- **Shotgun Surgery**: Small changes require multiple edits across files.
+- **Golden Hammer**: Using one pattern or tech for everything.
+- **Boat Anchor**: Unused but retained code.
+- **Reinventing the Wheel**: Rewriting what already exists and works.
+- **Magic Numbers / Strings**: Contextless hardcoded values.
+
+---
+
+## 🚫 Common Software Design Mistakes
+
+- ❌ Using patterns without understanding their purpose.
+- ❌ Premature or unnecessary abstractions.
+- ❌ Adding complexity for the sake of elegance.
+- ❌ Ignoring SOLID principles (especially SRP).
+- ❌ Mixing responsibilities (e.g., controllers validating, processing, and querying).
+- ❌ Poor documentation and naming.
+- ❌ Ignoring future maintainability.
+- ❌ Adopting architecture trends without real need.
+
+> 📌 A good architecture should be understandable, flexible, and aligned with business goals—not just “technically correct.”
+
+---
+<br/>
+
+# 🎓 Recommended Trainings: Software Design Patterns
+
+| Training Title                                         | Platform         | Description                                                                 | Level         | Link                                      |
+|--------------------------------------------------------|------------------|-----------------------------------------------------------------------------|---------------|-------------------------------------------|
+| **Design Patterns in Java**                            | Udemy            | Learn 23 GoF design patterns with practical Java examples.                  | Intermediate  | [View Course](https://www.udemy.com/course/java-design-patterns-tutorial/) |
+| **Design Patterns in .NET**                            | Pluralsight      | Deep dive into design patterns using C# and real-world use cases.           | Intermediate  | [View Course](https://www.pluralsight.com/courses/csharp-design-patterns) |
+| **Refactoring & Design Patterns**                      | JetBrains Academy| Practice refactoring code using design patterns interactively.              | Beginner      | [View Course](https://www.jetbrains.com/academy/) |
+| **Software Design Patterns – Full Course**             | freeCodeCamp     | Full YouTube course covering all major patterns with examples.              | Beginner      | [Watch](https://www.youtube.com/watch?v=tv-_1er1mWI) |
+| **Advanced Design Patterns in Java**                   | Coursera         | Taught by university professors with peer-reviewed assignments.             | Advanced      | [View Course](https://www.coursera.org/learn/design-patterns) |
+| **Design Patterns Overview**                           | GeeksforGeeks    | Written explanations and examples for all 23 GoF patterns.                  | All Levels    | [Read Guide](https://www.geeksforgeeks.org/software-design-patterns/) |
+| **Clean Architecture & Design Patterns**               | Udemy            | Combines DDD, SOLID principles, and patterns in real projects.              | Intermediate  | [View Course](https://www.udemy.com/course/clean-architecture-dotnet-core/) |
+| **Design Patterns in TypeScript**                      | Refactoring.Guru | Visual, interactive explanations of patterns in multiple languages.         | Beginner–Pro  | [Explore](https://refactoring.guru/design-patterns/typescript) |
+
+
+
 
 ---
 <br/>

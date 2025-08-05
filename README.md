@@ -1,43 +1,40 @@
- 
-# Guía de Modernización y Organización de Proyectos
+# Guide to Modernization and Project Organization
 
-Esta guía tiene como objetivo entregar un conjunto de buenas prácticas, principios arquitectónicos y estrategias organizativas para modernizar y estructurar proyectos de software de manera efectiva. Está pensada para equipos que buscan mejorar la calidad del código, facilitar la escalabilidad de sus soluciones y adoptar enfoques modernos como microservicios, DevOps, arquitectura en capas o hexagonal, promoviendo así un desarrollo más ordenado, mantenible y alineado a los objetivos del negocio.
+This guide aims to provide a set of best practices, architectural principles, and organizational strategies to effectively modernize and structure software projects. It is designed for teams seeking to improve code quality, enable scalability of their solutions, and adopt modern approaches such as microservices, DevOps, layered or hexagonal architecture—thus promoting more organized, maintainable development aligned with business goals.
 
 <br/>
 
-## Índice
+## Table of Contents
 
-- [1. Mejora de Proyectos No Modularizados](section1_projects.md)
-- [2. Nombres de Repositorios](section2_repositories.md)
-- [3. Propuestas de Arquitectura](section3_arquitecture.md)
-- [4. Guía de Patrones de Diseño de Software](section4_patterns.md)
-- [5. Arquitectura Recomendable para Proyectos Grandes (+20 Microservicios)](section5_architecture_recommended.md)
-- [6. Entorno de Desarrollo Local]
-- [7. DevOps]
+- [1. Improving Non-Modularized Projects](section1_projects.md)
+- [2. Repository Naming](section2_repositories.md)
+- [3. Architecture Proposals](section3_arquitecture.md)
+- [4. Software Design Patterns Guide](section4_patterns.md)
+- [5. Recommended Architecture for Large Projects (+20 Microservices)](section5_architecture_recommended.md)
+- [6. Local Development Setup](section6_local_environment.md)
+- [7. CI/CD Recommendation](section7_cicd.md)
 
 ---
 <br/>
 <br/>
 <br/>
 
+## Organizational Development Manifesto
 
-## Manifiesto de Desarrollo Organizacional
-
-- ✅ Fomentamos el diseño modular y reutilizable para aumentar la mantenibilidad.
-- ✅ Priorizamos el principio de Responsabilidad Única en todos los niveles.
-- ✅ Automatizamos pruebas y despliegues para asegurar calidad continua.
-- ✅ Valoramos la documentación clara y útil como parte esencial del código.
-- ✅ Promovemos la colaboración entre equipos y feedback temprano.
-- ✅ Definimos convenciones de nombres y estructura de repositorios organizados por dominio.
-- ✅ Adoptamos arquitecturas escalables que favorecen desacoplamiento.
+- ✅ We encourage modular and reusable design to enhance maintainability.
+- ✅ We prioritize the Single Responsibility Principle at all levels.
+- ✅ We automate tests and deployments to ensure continuous quality.
+- ✅ We value clear and useful documentation as an essential part of the code.
+- ✅ We promote team collaboration and early feedback.
+- ✅ We define naming conventions and repository structures organized by domain.
+- ✅ We adopt scalable architectures that favor decoupling.
 
 ---
 <br/>
 <br/>
 
-
-## 👤 Autor
+## 👤 Author
 
 **Pablo Andrés Díaz Saavedra** – [@godheaven](https://github.com/godheaven/)
 
-> Desarrollador apasionado por crear soluciones escalables e innovadoras, con experiencia en arquitectura de software, infraestructura cloud, DevOps y una profunda pasión por la tecnología.
+> Passionate developer focused on building scalable and innovative solutions, with experience in software architecture, cloud infrastructure, DevOps, and a deep love for technology.
