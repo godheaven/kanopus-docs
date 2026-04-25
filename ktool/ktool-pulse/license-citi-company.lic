@@ -1,0 +1,21 @@
+{
+  "algorithm" : "SHA256withRSA",
+  "payload" : {
+    "binding" : {
+      "hostname" : "",
+      "instanceId" : "",
+      "systemFingerprint" : "Xc2HpyRS1yjHcdDIzIgC4Qg60noN2bUpBe64UsSKuA="
+    },
+    "customer" : "Citi Company",
+    "customerId" : "Citi-001",
+    "expiresAt" : 1787659200.000000000,
+    "issuedAt" : 1777155750.873271633,
+    "licenseId" : "0b41afbb-680f-4f95-9407-7b7fde415f58",
+    "licenseType" : "ENTERPRISE",
+    "limits" : {
+      "maxUsers" : 1000
+    },
+    "product" : "ktool-pulse"
+  },
+  "signature" : "P25toEf672khlyxwQ9KLKMS6B7VdU0tIqBDyDJCaTm4pPgtxFVn0Uzp4yEFlPZJhWAohW2CwPfXSMyn6FqYsRr8cgZRDDeXE18t2CqY9quExcLQVY9nM60SPIMSg1q0CabXRnbeTthnjiwU0pSV84rTsL6mnjkNjaFKxTo3iASSH2VCVtFkGSLKJIUrMFmHfqLedWiwU7YTQX7wJNnhRiIcfc/GmaWtqGU9ztaJ8U06ge4FTgHbSDe0hz9IdKRMiGQLZn1u1kdU717zrCAZ7R+3YWcQ+7OewQqEKDh/AnEYTkgyJQej7oaKu19gIhMopEy/6SRTh5+tFcqrs2CoK4g=="
+}
