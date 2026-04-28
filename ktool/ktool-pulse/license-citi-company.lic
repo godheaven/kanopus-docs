@@ -8,8 +8,7 @@
     },
     "customer" : "Citi Company",
     "customerId" : "Citi-001",
-    "expiresAt" : 1788091200.000000000,
-    "issuedAt" : 1777400464.231242627,
+    "issuedAt" : 1777400846.200561111,
     "licenseId" : "a5b70b6a-a076-48bd-847e-2c029f167cc5",
     "licenseType" : "ENTERPRISE",
     "limits" : {
@@ -17,5 +16,5 @@
     },
     "product" : "ktool-pulse"
   },
-  "signature" : "nt4SHiI3FlkuF1avjVu75iaMofGTY2QPWgJlKtwj/Yb4l7SQdB+oNGNzLpr7JUZb1w01Y6J32KBl1aVDzo/HYEm+gjH/DYHHtMZjhmzYleI41IeQ42sKQAynOXJTx+lpwG6K4M+HXRqVWkg52UQL2Ay7bQhbwcqUMzx0hF/jtzeQIi0BZKKL6tK29huhpmb0mPE8zgEmI3DaxWw72tWmZeLDg+ywLmeSHN9F0L2PM7tLpubgCcBR8uL/Lmt1ZLFFZWk0rcEJhxgGSBTMEHJPugXCarjAq4S59N6lxHqJtalAHk3TPl0V9iydnR5VvQa419C2Lp/Wqfoz3AQ3ov/qYg=="
+  "signature" : "EK9T8nnWbrDgJhPAeOa2K21pSYyQ6Bl28kTzMim4p8NNFbjG0B8HIogKh3+PvNYvhgjYjJvUUXdo9lkqI05xYFLnawo7lSy9bWtnSK+rCNgOZzmyJvao0FzhLonJcW2RwkW8ksXwnRPRymxbK0hFYn5+1O1sTNI0FXd31mV8M8st0eOzUSc0QhsIi/OJ8apzO5PhR5080nOr5xZxvFfPyqu89y1qWv/WY2qHpY/rVJwx8DnFDm5PA4e61xF2TLn6D6q+JMycHBAtUwqKA8D89GEi4cGfCp0yGaf147OiWtxA6fkbXU3Ki57z+J3HZVTEEv2zLttHI8YOshZgBsYSeA=="
 }
