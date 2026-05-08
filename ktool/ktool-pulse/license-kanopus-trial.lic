@@ -8,12 +8,13 @@
     },
     "customer" : "Kanopus Trial",
     "customerId" : "TRIAL-001",
-    "expiresAt" : 1798718400.000000000,
-    "issuedAt" : 1778240975.810957215,
+    "issuedAt" : 1778241810.079513358,
     "licenseId" : "41c842d8-d25c-4f21-b691-c72a5242c89c",
     "licenseType" : "ENTERPRISE",
-    "limits" : { },
+    "limits" : {
+      "maxUsers" : 1000
+    },
     "product" : "ktool-pulse"
   },
-  "signature" : "Dcme0rwSSYcJ1ZYs2GymE84dl9uaw0wV2dwXmPKFx0OGkPiDfxgy0iGP5WsQsb5mRBWWd6efgXSuYhjiR12HEFmkOXpyLq0cJcqcskPbEst3G1S72fu0TSrEkK4QODgV04emLF4IdMSpLZI2LNudhXm4Dl78RQJjZyGD4tBq4lHydVxxP8I4BgHjZONQ74SwFRx4WWGWnVjVMQOf45xcSAhX/3Zf1RQ504mBgynYSF87itjzdhM10i56uod/Is/fuQ7JJQPD1Op2k+SrHTm5kMLKy1gHSFlMmm7BclaX5CGVOfe0IT/idesXD1vrP+FgOoxsxBpjFsrY76nF/ti86w=="
+  "signature" : "EjdFuUm9NL1Wp9h3Nfw/HJr2PNEY6zVqCgzbeNVOqJvsImirCc18FFxxKu6ViXVccQU49I2K55gz5K4bVtYjdpiyQ4OGxNSwUbZAyeYdCz8t+5ZevZ9ZyA3IDx3ZNd7HPA/4pLAo7FC+0FOxx4hrA6etNmWh3guMTma9/VjgddQNfYiBSjoGQ0PCljR7VFeHRvfrS3XQ8cxK9d4l9P1RNiPBBexAKo4q21b4TYrZ3nIiTrvy8xljgsm4VKyB8kIa1dQsQez0GZhrqzlkYAH58ceiXmSnJPatDP+P/xpUKi/mdL4X2I3I5tNBKS6USj7YSd1xhkiU1dlfJw3E5Wzmew=="
 }
