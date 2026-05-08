@@ -1,0 +1,19 @@
+{
+  "algorithm" : "SHA256withRSA",
+  "payload" : {
+    "binding" : {
+      "hostname" : "",
+      "instanceId" : "",
+      "systemFingerprint" : "NvbIQuLA7Avz0vA2gXvpZrT2a4AswHkZ44dZ43njEiI="
+    },
+    "customer" : "Kanopus Trial",
+    "customerId" : "TRIAL-001",
+    "expiresAt" : 1798718400.000000000,
+    "issuedAt" : 1778240975.810957215,
+    "licenseId" : "41c842d8-d25c-4f21-b691-c72a5242c89c",
+    "licenseType" : "ENTERPRISE",
+    "limits" : { },
+    "product" : "ktool-pulse"
+  },
+  "signature" : "Dcme0rwSSYcJ1ZYs2GymE84dl9uaw0wV2dwXmPKFx0OGkPiDfxgy0iGP5WsQsb5mRBWWd6efgXSuYhjiR12HEFmkOXpyLq0cJcqcskPbEst3G1S72fu0TSrEkK4QODgV04emLF4IdMSpLZI2LNudhXm4Dl78RQJjZyGD4tBq4lHydVxxP8I4BgHjZONQ74SwFRx4WWGWnVjVMQOf45xcSAhX/3Zf1RQ504mBgynYSF87itjzdhM10i56uod/Is/fuQ7JJQPD1Op2k+SrHTm5kMLKy1gHSFlMmm7BclaX5CGVOfe0IT/idesXD1vrP+FgOoxsxBpjFsrY76nF/ti86w=="
+}
