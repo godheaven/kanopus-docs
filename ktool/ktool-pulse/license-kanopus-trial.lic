@@ -4,17 +4,18 @@
     "binding" : {
       "hostname" : "",
       "instanceId" : "",
-      "systemFingerprint" : "NvbIQuLA7Avz0vA2gXvpZrT2a4AswHkZ44dZ43njEiI="
+      "systemFingerprint" : "lm+2b+drnsGCeGfK0Wv3Ky9Yp5MJta7NhzqC/eGQmaY="
     },
-    "customer" : "Kanopus Trial",
+    "customer" : "Kanopus",
     "customerId" : "TRIAL-001",
-    "issuedAt" : 1778241810.079513358,
-    "licenseId" : "41c842d8-d25c-4f21-b691-c72a5242c89c",
+    "expiresAt" : 1798718400.000000000,
+    "issuedAt" : 1778506534.134667273,
+    "licenseId" : "284f5385-0714-4810-8b2e-b67f1a4a93dd",
     "licenseType" : "ENTERPRISE",
     "limits" : {
       "maxUsers" : 1000
     },
     "product" : "ktool-pulse"
   },
-  "signature" : "EjdFuUm9NL1Wp9h3Nfw/HJr2PNEY6zVqCgzbeNVOqJvsImirCc18FFxxKu6ViXVccQU49I2K55gz5K4bVtYjdpiyQ4OGxNSwUbZAyeYdCz8t+5ZevZ9ZyA3IDx3ZNd7HPA/4pLAo7FC+0FOxx4hrA6etNmWh3guMTma9/VjgddQNfYiBSjoGQ0PCljR7VFeHRvfrS3XQ8cxK9d4l9P1RNiPBBexAKo4q21b4TYrZ3nIiTrvy8xljgsm4VKyB8kIa1dQsQez0GZhrqzlkYAH58ceiXmSnJPatDP+P/xpUKi/mdL4X2I3I5tNBKS6USj7YSd1xhkiU1dlfJw3E5Wzmew=="
+  "signature" : "jKg636Ul0FpBabF8B04xYgwqKMk0HzjHZhboqB8a9WQ4FJo7f0/bQQN+VRXuBbElrzYDD2ky9CRjqOnIsWqLiUdluYCCvpJ+9dodVJPuGBd49d0bttVHE0nZJMppSw5KTn98cGBWzcwZrf4ugrJpwptpKe26LLCXc/klGJLdl1KnPM5ZJnYGJ4EOmLDyldm9+fvahdSYmkMrdHREAnxojf3yMhn3Xw4tg//M/d3gDY2M+ExFEI9Xjf/mXvm7K100KRxjv4yWXpjjWW5VZ+90KXb95mvNsvFXvngkamcEBfGLtutTM0E7OHYvwafUtay2CYZGrZQpZQ26SpTEzXE8tQ=="
 }
