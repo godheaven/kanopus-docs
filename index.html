@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth dark">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+  <title>DevTools Dashboard</title>
+
+  <meta name="description" content="Acceso directo a herramientas de desarrollo: ktool-pulse y ktool-web-status.">
+
+  <!-- Icons & Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS v4 CDN -->
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+  <!-- Tailwind v4 Config -->
+  <style type="text/tailwindcss">
+    @custom-variant dark (&:where(.dark, .dark *));
+    @theme {
+      --default-font-family: "Inter";
+    }
+  </style>
+
+  <!-- Alpine.js -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- Configuration Links -->
+  <script>
+    // =========================================================================
+    // CONFIGURACIÓN DE ENLACES (FÁCIL REEMPLAZO)
+    // Reemplace los valores a continuación por las URLs de destino deseadas.
+    // =========================================================================
+    const LINK_A = "https://www.kanopus.cl"; // Para ktool-pulse
+    const LINK_B = "https://www.kanopus.cl"; // Para ktool-web-status
+  </script>
+
+  <style>
+    /* x-cloak */
+    [x-cloak] {
+      display: none !important;
+    }
+
+    /* ── Custom CSS Variables (Generic Look & Feel) ── */
+    :root {
+      --k-bg: #f8fafc;
+      --k-card: #ffffff;
+      --k-card-alt: #f1f5f9;
+      --k-border: rgba(99, 102, 241, 0.12);
+      --k-accent: #4f46e5;       /* Modern Indigo */
+      --k-accent-rgb: 79, 70, 229;
+      --k-accent2: #0891b2;      /* Modern Cyan */
+      --k-accent2-rgb: 8, 145, 178;
+      --k-text: #0f172a;
+      --k-muted: #475569;
+    }
+
+    .dark {
+      --k-bg: #090d16;
+      --k-card: #111827;
+      --k-card-alt: #1f2937;
+      --k-border: rgba(99, 102, 241, 0.15);
+      --k-accent: #6366f1;       /* Light Indigo */
+      --k-accent-rgb: 99, 102, 241;
+      --k-accent2: #06b6d4;      /* Light Cyan */
+      --k-accent2-rgb: 6, 182, 212;
+      --k-text: #f3f4f6;
+      --k-muted: #9ca3af;
+    }
+
+    body {
+      background-color: var(--k-bg);
+      color: var(--k-text);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* Decorative background gradient mesh for visual interest */
+    .bg-grid-glow {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image: 
+        radial-gradient(circle at 20% 20%, rgba(var(--k-accent-rgb), 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(var(--k-accent2-rgb), 0.05) 0%, transparent 40%);
+    }
+
+    /* ── Gradient Text ── */
+    .gradient-text {
+      background: linear-gradient(135deg, var(--k-accent), var(--k-accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ── Sophisticated Card ── */
+    .k-card {
+      position: relative;
+      background: var(--k-card);
+      border: 1px solid var(--k-border);
+      border-radius: 1rem;
+      overflow: hidden;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
+    }
+
+    .k-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(var(--k-accent-rgb), 0.05), rgba(var(--k-accent2-rgb), 0.03));
+      pointer-events: none;
+      border-radius: 1rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .k-card:hover::before {
+      opacity: 1;
+    }
+
+    .k-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 30px rgba(var(--k-accent-rgb), 0.15), 0 8px 25px rgba(0, 0, 0, 0.1);
+      border-color: rgba(var(--k-accent-rgb), 0.4);
+    }
+
+    /* ── Floating Controls Bar (Lang & Theme Switchers) ── */
+    .controls-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 9999px;
+      border: 1px solid var(--k-border);
+      color: var(--k-muted);
+      background: var(--k-card);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .controls-btn:hover {
+      border-color: var(--k-accent);
+      color: var(--k-accent);
+      background: rgba(var(--k-accent-rgb), 0.06);
+    }
+
+    .lang-btn-text {
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    /* ── Hover arrow on cards ── */
+    .card-arrow {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, var(--k-accent), var(--k-accent2));
+      color: #fff;
+      opacity: 0;
+      transform: scale(0.5);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .k-card:hover .card-arrow {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Icons container */
+    .api-icon {
+      font-size: 1.5rem;
+      background: linear-gradient(135deg, var(--k-accent), var(--k-accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body x-data="{
+      darkMode: !(document.cookie && document.cookie.indexOf('devtools_dark=0') !== -1),
+      lang: (localStorage.getItem('devtools_lang') || 'es'),
+      linkPulse: LINK_A,
+      linkWebStatus: LINK_B,
+      toggleDarkMode() {
+        this.darkMode = !this.darkMode;
+        if (this.darkMode) {
+          document.body.parentNode.classList.add('dark');
+          document.cookie = 'devtools_dark=1; path=/; max-age=31536000; SameSite=Lax; Secure';
+        } else {
+          document.body.parentNode.classList.remove('dark');
+          document.cookie = 'devtools_dark=0; path=/; max-age=31536000; SameSite=Lax; Secure';
+        }
+      },
+      toggleLang() {
+        this.lang = (this.lang === 'es') ? 'en' : 'es';
+        localStorage.setItem('devtools_lang', this.lang);
+      },
+      t(es, en) { return this.lang === 'es' ? es : en; }
+    }" x-init="
+     if(!darkMode) document.body.parentNode.classList.remove('dark');
+     lang = localStorage.getItem('devtools_lang') || 'es';
+   " @storage.window="
+     if ($event.key === 'devtools_lang') lang = $event.newValue || 'es';
+   ">
+
+  <!-- Background Decorative Mesh -->
+  <div class="bg-grid-glow"></div>
+
+  <!-- Floating Navigation Controls -->
+  <div class="fixed top-4 right-4 z-50 flex items-center gap-2">
+    <!-- Language Toggle -->
+    <button @click="toggleLang()" class="controls-btn lang-btn-text" type="button" :title="t('Switch to English','Cambiar a Español')">
+      <span x-text="lang === 'es' ? 'EN' : 'ES'"></span>
+    </button>
+
+    <!-- Dark Mode Toggle -->
+    <button x-on:click="toggleDarkMode()" type="button" title="Toggle dark mode" class="controls-btn">
+      <div x-cloak x-show="!darkMode" x-transition:enter="transition ease-out duration-150"
+        x-transition:enter-start="opacity-0 rotate-180" x-transition:enter-end="opacity-100 rotate-0"
+        x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100 rotate-0"
+        x-transition:leave-end="opacity-0 rotate-180" class="flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+        </svg>
+      </div>
+      <div x-cloak x-show="darkMode" x-transition:enter="transition ease-out duration-150"
+        x-transition:enter-start="opacity-0 rotate-180" x-transition:enter-end="opacity-100 rotate-0"
+        x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100 rotate-0"
+        x-transition:leave-end="opacity-0 rotate-180" class="flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+        </svg>
+      </div>
+    </button>
+  </div>
+
+  <!-- Main Content Area -->
+  <main id="page-content" class="flex-auto flex flex-col justify-center items-center px-4 py-16 z-10 relative">
+    <div class="max-w-4xl w-full flex flex-col gap-8">
+      
+      <!-- Title Section -->
+      <div class="text-center space-y-3">
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight" style="line-height: 1.15;">
+          <span class="gradient-text" x-text="t('DevTools', 'DevTools')">DevTools</span>
+        </h1>
+        <p class="max-w-2xl mx-auto text-sm sm:text-base leading-relaxed" style="color: var(--k-muted);" 
+           x-text="t('Selecciona una herramienta para acceder a su panel de administración y control.', 'Select a tool to access its administration and control panel.')">
+          Selecciona una herramienta para acceder a su panel de administración y control.
+        </p>
+      </div>
+
+      <!-- Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+
+        <!-- Card 1: ktool-pulse -->
+        <a :href="linkPulse" class="k-card p-6 md:p-8 block group">
+          <div class="card-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4">
+              <path fill-rule="evenodd" d="M3.75 12a.75.75 0 0 1 .75-.75h13.19l-5.47-5.47a.75.75 0 0 1 1.06-1.06l6.75 6.75a.75.75 0 0 1 0 1.06l-6.75 6.75a.75.75 0 1 1-1.06-1.06l5.47-5.47H4.5a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+          <div class="api-icon" style="margin-bottom:0.75rem;">
+            <i class="fa-solid fa-chart-line text-3xl"></i>
+          </div>
+          
+          <h2 class="text-xl font-bold tracking-tight mb-2" style="color: var(--k-text);">ktool-pulse</h2>
+          
+          <p class="text-sm leading-relaxed mb-6" style="color: var(--k-muted);" x-text="t(
+            'Potente plataforma de análisis de rendimiento en Jira con información histórica y métricas de eficiencia.',
+            'Powerful Jira performance analytics platform with historical insights and actionable efficiency metrics.'
+          )">
+            Potente plataforma de análisis de rendimiento en Jira con información histórica y métricas de eficiencia.
+          </p>
+
+          <!-- Tech Badges -->
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full"
+              style="background:rgba(var(--k-accent-rgb),0.1);color:var(--k-accent);border:1px solid var(--k-border);">Spring Boot</span>
+            <span class="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full"
+              style="background:rgba(var(--k-accent2-rgb),0.08);color:var(--k-accent2);border:1px solid var(--k-border);">Jackson 3</span>
+            <span class="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full"
+              style="background:rgba(var(--k-accent-rgb),0.1);color:var(--k-accent);border:1px solid var(--k-border);">Jira API</span>
+            <span class="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full"
+              style="background:rgba(var(--k-accent2-rgb),0.08);color:var(--k-accent2);border:1px solid var(--k-border);">H2 JPA</span>
+          </div>
+
+          <!-- Feature Bullets -->
+          <div class="flex flex-wrap gap-x-4 gap-y-2 text-xs font-medium" style="color: var(--k-muted);">
+            <span>
+              <i class="fa-solid fa-clock-rotate-left mr-1.5" style="color: var(--k-accent);"></i>
+              <span x-text="t('Insights Históricos','Historical Insights')">Insights Históricos</span>
+            </span>
+            <span>
+              <i class="fa-solid fa-gauge-high mr-1.5" style="color: var(--k-accent2);"></i>
+              <span x-text="t('Métricas de Eficiencia','Efficiency Metrics')">Métricas de Eficiencia</span>
+            </span>
+            <span>
+              <i class="fa-solid fa-cloud-arrow-down mr-1.5" style="color: var(--k-accent);"></i>
+              <span>Cloud / On-Premise</span>
+            </span>
+          </div>
+        </a>
+
+        <!-- Card 2: ktool-web-status -->
+        <a :href="linkWebStatus" class="k-card p-6 md:p-8 block group">
+          <div class="card-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4">
+              <path fill-rule="evenodd" d="M3.75 12a.75.75 0 0 1 .75-.75h13.19l-5.47-5.47a.75.75 0 0 1 1.06-1.06l6.75 6.75a.75.75 0 0 1 0 1.06l-6.75 6.75a.75.75 0 1 1-1.06-1.06l5.47-5.47H4.5a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          
+          <div class="api-icon" style="margin-bottom:0.75rem;">
+            <i class="fa-solid fa-circle-nodes text-3xl"></i>
+          </div>
+          
+          <h2 class="text-xl font-bold tracking-tight mb-2" style="color: var(--k-text);">ktool-web-status</h2>
+          
+          <p class="text-sm leading-relaxed mb-6" style="color: var(--k-muted);" x-text="t(
+            'Monitoreo de salud de URLs multi-pestaña con validación asíncrona, filtros, importación CSV y UI dark mode.',
+            'Multi-tab URL health monitoring with async validation, filters, CSV import/export, and a modern dark UI.'
+          )">
+            Monitoreo de salud de URLs multi-pestaña con validación asíncrona, filtros, importación CSV y UI dark mode.
+          </p>
+
+          <!-- Tech Badges -->
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full"
+              style="background:rgba(var(--k-accent-rgb),0.1);color:var(--k-accent);border:1px solid var(--k-border);">Spring Boot</span>
+            <span class="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full"
+              style="background:rgba(var(--k-accent2-rgb),0.08);color:var(--k-accent2);border:1px solid var(--k-border);">Thymeleaf</span>
+            <span class="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full"
+              style="background:rgba(var(--k-accent2-rgb),0.08);color:var(--k-accent2);border:1px solid var(--k-border);">Bootstrap 5</span>
+            <span class="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full"
+              style="background:rgba(var(--k-accent-rgb),0.1);color:var(--k-accent);border:1px solid var(--k-border);">H2 JPA</span>
+          </div>
+
+          <!-- Feature Bullets -->
+          <div class="flex flex-wrap gap-x-4 gap-y-2 text-xs font-medium" style="color: var(--k-muted);">
+            <span>
+              <i class="fa-solid fa-table-list mr-1.5" style="color: var(--k-accent2);"></i>
+              <span x-text="t('Multi-pestaña','Multi-tab')">Multi-tab</span>
+            </span>
+            <span>
+              <i class="fa-solid fa-bolt mr-1.5" style="color: var(--k-accent);"></i>
+              <span x-text="t('Validación asíncrona','Async validation')">Async validation</span>
+            </span>
+            <span>
+              <i class="fa-solid fa-file-csv mr-1.5" style="color: var(--k-accent2);"></i>
+              <span>CSV</span>
+            </span>
+            <span>
+              <i class="fa-solid fa-moon mr-1.5" style="color: var(--k-accent);"></i>
+              <span>Dark UI</span>
+            </span>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </main>
+
+</body>
+
+</html>
